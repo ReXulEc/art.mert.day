@@ -34,4 +34,7 @@
 	</div>
 </div>
 
-<svelte:head><link rel="icon" href={favicon} /></svelte:head>
+<svelte:head>
+	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+	<title>art - mert doğu</title>
+</svelte:head>
