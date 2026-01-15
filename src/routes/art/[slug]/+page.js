@@ -1,3 +1,5 @@
+export const prerender = true;
+
 import { photos } from '$lib/data/photos';
 
 export function entries() {
@@ -5,5 +7,3 @@ export function entries() {
     slug: photo.slug
   }));
 }
-
-export const prerender = true;

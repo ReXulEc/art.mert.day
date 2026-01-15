@@ -4,6 +4,7 @@
 	import LeftBar from '$lib/components/LeftBar.svelte';
 	import MobileHeader from '$lib/components/MobileHeader.svelte';
 	import MobileFooter from '$lib/components/MobileFooter.svelte';
+	
 
 	let { children } = $props();
 </script>
