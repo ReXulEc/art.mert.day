@@ -5,7 +5,5 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
     plugins: [tailwindcss(), sveltekit(), devtoolsJson()],
-    server: {
-        allowedHosts: ['e29e4d380076.ngrok-free.app']
-    }
+    base:"/art.mert.day/"
 });
