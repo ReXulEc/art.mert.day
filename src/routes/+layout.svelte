@@ -4,9 +4,10 @@
 	import LeftBar from '$lib/components/LeftBar.svelte';
 	import MobileHeader from '$lib/components/MobileHeader.svelte';
 	import MobileFooter from '$lib/components/MobileFooter.svelte';
-	
 
-	let { children } = $props();
+	let { children, data } = $props();
+
+	import PageTransition from '$lib/components/PageTransition.svelte';
 </script>
 
 <div class="md:flex md:min-h-screen">
@@ -24,7 +25,9 @@
 
 		<!-- CONTENT -->
 		<main class="flex-none xl:flex-1">
-			{@render children()}
+			<PageTransition url={data.url}>
+				{@render children()}
+			</PageTransition>
 		</main>
 
 		<!-- MOBILE FOOTER -->
@@ -34,8 +37,7 @@
 	</div>
 </div>
 
-
 <svelte:head>
 	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-	<title>art - mert doğu</title>	
+	<title>art - mert doğu</title>
 </svelte:head>
