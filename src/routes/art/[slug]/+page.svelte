@@ -31,7 +31,7 @@
 
 	function measure() {
 		if (!browser || !isMounted || !section || !track) return;
-		
+
 		// DOM'un hazır olmasını bekle
 		setTimeout(() => {
 			start = section.offsetTop;
@@ -58,7 +58,7 @@
 
 	onMount(() => {
 		if (!browser) return;
-		
+
 		isMounted = true;
 
 		// Birden fazla measure çağrısı
@@ -81,7 +81,7 @@
 
 	onDestroy(() => {
 		if (!browser) return;
-		
+
 		isMounted = false;
 
 		window.removeEventListener('scroll', onScroll);
@@ -97,15 +97,22 @@
 
 {#if photo.srchigh.length === 1}
 	<div class="fixed inset-0 flex items-center justify-center bg-white">
-		<div class="flex w-full justify-center md:pl-[16.6vw]">
-			<div class="flex flex-col items-center">
+		<div class="flex w-full justify-center">
+			<div class="flex flex-col ">
 				{#each photo.srchigh as src}
-					<img {src} alt={photo.title} class="mb-4 max-h-[80vh] w-auto object-contain" />
+					<img {src} alt={photo.title} class="mb-4 max-h-[60vh] w-auto object-contain" />
 				{/each}
 
-						<figcaption class="text-sm tracking-wider text-neutral-400">
-							{photo.title} - image 1 of {photo.srchigh.length}
+				<div>
+					<figcaption class="text-sm tracking-wider text-neutral-400">
+						{photo.title} - image 1 of {photo.srchigh.length}
+					</figcaption>
+					{#if photo.location}
+						<figcaption class="text-xs tracking-wider text-neutral-400 italic">
+							{photo.location}
 						</figcaption>
+					{/if}
+				</div>
 			</div>
 		</div>
 	</div>
@@ -114,15 +121,22 @@
 		<div class="sticky top-0 flex h-screen items-center overflow-hidden">
 			<div
 				bind:this={track}
-				class="flex gap-16 pr-[10vw] pl-[18vw] will-change-transform"
+				class="flex gap-16 pr-[10vw] pl-[6vw] will-change-transform md:pl-[18vw]"
 				style="transform: translateX(-{scrollX}px)"
 			>
-				{#each photo.src as src}
+				{#each photo.srchigh as src}
 					<figure class="flex flex-col gap-4">
-						<img {src} class="h-[450px] w-auto max-w-none object-contain" />
-						<figcaption class="text-sm tracking-wider text-neutral-400">
-							{photo.title} - image {photo.src.indexOf(src) + 1} of {photo.src.length}
-						</figcaption>
+						<img {src} class="h-[300px] w-auto max-w-none object-contain md:h-[450px]" />
+						<div>
+							<figcaption class="text-sm tracking-wider text-neutral-400">
+								{photo.title} - image {photo.srchigh.indexOf(src) + 1} of {photo.srchigh.length}
+							</figcaption>
+							{#if photo.location && photo.srchigh.indexOf(src) === 0}
+								<figcaption class="text-xs tracking-wider text-neutral-400 italic">
+									{photo.location}
+								</figcaption>
+							{/if}
+						</div>
 					</figure>
 				{/each}
 			</div>

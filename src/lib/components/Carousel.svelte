@@ -94,12 +94,13 @@
 			style="transform: translateX(-{scrollX}px)"
 		>
 			{#each photos as photo}
+
 				<a href={`/art/${photo.slug}`} class="block">
 					<figure class="flex flex-col gap-4">
 						<img
 							src={photo.srclow[0]}
 							alt={photo.title}
-							class="h-[300px] md:h-[450px] w-auto max-w-none object-contain"
+							class="h-[300px] md:h-[450px] w-auto max-w-none object-contain {photo.customcss?.toimg ?? ''}"
 							loading="eager"
 							decoding="async"
 							on:load={measure}

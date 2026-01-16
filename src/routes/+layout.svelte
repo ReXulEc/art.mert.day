@@ -9,21 +9,21 @@
 	let { children } = $props();
 </script>
 
-<div class="flex min-h-screen">
+<div class="md:flex md:min-h-screen">
 	<!-- DESKTOP LEFT BAR -->
 	<aside class="hidden w-2/12 md:block">
 		<LeftBar />
 	</aside>
 
 	<!-- PAGE -->
-	<div class="flex flex-1 flex-col">
+	<div class="md:flex md:flex-1 md:flex-col">
 		<!-- MOBILE HEADER -->
 		<div class="md:hidden">
 			<MobileHeader />
 		</div>
 
 		<!-- CONTENT -->
-		<main class="flex-1">
+		<main class="flex-none xl:flex-1">
 			{@render children()}
 		</main>
 
@@ -34,7 +34,8 @@
 	</div>
 </div>
 
+
 <svelte:head>
 	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-	<title>art - mert doğu</title>
+	<title>art - mert doğu</title>	
 </svelte:head>
