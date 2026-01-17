@@ -22,7 +22,7 @@
 
 	function measure() {
 		if (!browser || !isMounted || !section || !track) return;
-		
+
 		// DOM'un hazır olmasını bekle
 		setTimeout(() => {
 			start = section.offsetTop;
@@ -49,7 +49,7 @@
 
 	onMount(() => {
 		if (!browser) return;
-		
+
 		isMounted = true;
 
 		// Birden fazla measure çağrısı
@@ -72,7 +72,7 @@
 
 	onDestroy(() => {
 		if (!browser) return;
-		
+
 		isMounted = false;
 
 		window.removeEventListener('scroll', onScroll);
@@ -90,26 +90,63 @@
 	<div class="sticky top-0 flex h-screen items-center overflow-hidden">
 		<div
 			bind:this={track}
-			class="flex gap-16 pr-[10vw] pl-[6vw] md:pl-[18vw] will-change-transform"
+			class="flex gap-5 pr-[10vw] pl-[6vw] will-change-transform md:pl-[18vw]"
 			style="transform: translateX(-{scrollX}px)"
 		>
 			{#each photos as photo}
-
-				<a href={`/art/${photo.slug}`} class="block">
-					<figure class="flex flex-col gap-4">
-						<img
-							src={photo.srclow[0]}
-							alt={photo.title}
-							class="h-[300px] md:h-[450px] w-auto max-w-none object-contain {photo.customcss?.toimg ?? ''}"
-							loading="eager"
-							decoding="async"
-							on:load={measure}
-						/>
-						<figcaption class="text-sm tracking-wider text-neutral-400">
-							{photo.title}
-						</figcaption>
-					</figure>
-				</a>
+				{#if photo.srclow[0].endsWith('.mp4')}
+					<a href={`/art/${photo.slug}`} class="block">
+						<figure class="flex flex-col gap-4">
+							<video
+								src={photo.srclow[0]}
+								autoplay
+								loop
+								muted
+								playsinline
+								class="aspect-3/4 h-[300px] w-auto max-w-none object-contain md:h-[450px] {photo
+									.customcss?.toimg ?? ''}"
+								on:mouseenter={(e) => e.currentTarget.pause()}
+								on:mouseleave={(e) => e.currentTarget.play()}
+								on:touchstart={(e) => e.currentTarget.pause()}
+								on:touchend={(e) => e.currentTarget.play()}
+							></video>
+							<div>
+								<figcaption class="text-sm tracking-wider text-neutral-400">
+									{photo.title}
+								</figcaption>
+								{#if photo.extratext}
+									<figcaption class="text-xs tracking-wider text-neutral-400 italic">
+										{photo.extratext}
+									</figcaption>
+								{/if}
+							</div>
+						</figure>
+					</a>
+				{:else}
+					<a href={`/art/${photo.slug}`} class="block">
+						<figure class="flex flex-col gap-4">
+							<img
+								src={photo.srclow[0]}
+								alt={photo.title}
+								class="h-[300px] w-auto max-w-none object-contain md:h-[450px] {photo.customcss
+									?.toimg ?? ''}"
+								loading="eager"
+								decoding="async"
+								on:load={measure}
+							/>
+							<div>
+								<figcaption class="text-sm tracking-wider text-neutral-400">
+									{photo.title}
+								</figcaption>
+								{#if photo.extratext}
+									<figcaption class="text-xs tracking-wider text-neutral-400 italic">
+										{photo.extratext}
+									</figcaption>
+								{/if}
+							</div>
+						</figure>
+					</a>
+				{/if}
 			{/each}
 		</div>
 	</div>

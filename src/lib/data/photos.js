@@ -28,6 +28,17 @@ export const photos = [
     srclow: ["/static/art/hic-gitmemis-gibi-isiklar/1-1.jpeg"],
     location: `Izmir, Turkey - 38°26'09.2"N 27°05'43.9"E`
   },
+    {
+    slug: "ruyalar",
+    title: "rûyalar",
+    srchigh: ["/static/art/ruyalar/1.mp4", "/static/art/ruyalar/2.png"],
+    srclow: ["/static/art/ruyalar/1-1.mp4", "/static/art/ruyalar/2-1.jpeg"],
+    location: `Unknown, Turkey`,
+    customcss: {
+      toimg: "drop-shadow-md drop-shadow-black/5"
+    },
+    extratext: "hover to pause"
+  },
   {
     slug: "still-drunk",
     title: "still drunk",
@@ -50,21 +61,19 @@ export const photos = [
     location: `Cliff Venue Izmir, Turkey - 38°27'48.9"N 27°13'05.5"E`
   },
   {
-    slug: "depozito-concert",
-    title: "depozito concert",
-    srchigh: ["/static/art/depozito-concert/1.JPG", "/static/art/depozito-concert/2.JPG", "/static/art/depozito-concert/3.JPG"],
-    srclow: ["/static/art/depozito-concert/1-1.jpeg", "/static/art/depozito-concert/2-1.jpeg", "/static/art/depozito-concert/3-1.jpeg"],
+    slug: "depozito-19-07-25",
+    title: "depozito concert - 19-07-25",
+    srchigh: ["/static/art/depozito-19-07-25/1.JPG", "/static/art/depozito-19-07-25/2.JPG", "/static/art/depozito-19-07-25/3.JPG"],
+    srclow: ["/static/art/depozito-19-07-25/1-1.jpeg", "/static/art/depozito-19-07-25/2-1.jpeg", "/static/art/depozito-19-07-25/3-1.jpeg"],
     location: `Kültürpark Izmir, Turkey - 38°25'46.0"N 27°08'41.9"E`
   },
   {
     slug: "circle",
     title: "circle",
-    srchigh: ["/static/art/circle/1.gif"],
-    srclow: ["/static/art/circle/1.gif"],
-    customcss: {
-      toimg: "drop-shadow-md drop-shadow-black/5"
-    },
-    location: `Unknown, Turkey`
+    srchigh: ["/static/art/circle/1.mp4"],
+    srclow: ["/static/art/circle/1.mp4"],
+    location: `Unknown, Turkey`,
+    extratext: "hover to pause"
   },
   {
     slug: "baris",
