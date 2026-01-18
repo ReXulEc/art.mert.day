@@ -103,6 +103,8 @@
 								loop
 								muted
 								playsinline
+								webkit-playsinline
+								preload="auto"
 								class="aspect-3/4 h-[300px] w-auto max-w-none object-contain md:h-[450px] {photo
 									.customcss?.toimg ?? ''}"
 								on:mouseenter={(e) => e.currentTarget.pause()}
