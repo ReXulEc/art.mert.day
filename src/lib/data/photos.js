@@ -28,16 +28,12 @@ export const photos = [
     srclow: ["/static/art/hic-gitmemis-gibi-isiklar/1-1.jpeg"],
     location: `Izmir, Turkey - 38°26'09.2"N 27°05'43.9"E`
   },
-    {
-    slug: "ruyalar",
-    title: "rûyalar",
-    srchigh: ["/static/art/ruyalar/1.mp4", "/static/art/ruyalar/2.png"],
-    srclow: ["/static/art/ruyalar/1-1.mp4", "/static/art/ruyalar/2-1.jpeg"],
-    location: `Unknown, Turkey`,
-    customcss: {
-      toimg: "drop-shadow-md drop-shadow-black/5"
-    },
-    extratext: "hover to pause"
+  {
+    slug: "gelmedin",
+    title: "gelmedin",
+    srchigh: ["/static/art/gelmedin/1.png"],
+    srclow: ["/static/art/gelmedin/1-1.jpeg"],
+    location: `Izmir, Turkey`
   },
   {
     slug: "still-drunk",
@@ -82,4 +78,15 @@ export const photos = [
     srclow: ["/static/art/baris/1-1.jpeg"],
     location: `Kuşadası, Turkey - 37°52'01.9"N 27°15'49.7"E`
   },
+      {
+    slug: "ruyalar",
+    title: "rûyalar",
+    srchigh: ["/static/art/ruyalar/1.mp4", "/static/art/ruyalar/2.png"],
+    srclow: ["/static/art/ruyalar/1-1.mp4", "/static/art/ruyalar/2-1.jpeg"],
+    location: `Unknown, Turkey`,
+    customcss: {
+      toimg: "drop-shadow-md drop-shadow-black/5"
+    },
+    extratext: "hover to pause"
+  }
 ];
