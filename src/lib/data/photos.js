@@ -82,7 +82,7 @@ export const photos = [
     slug: "ruyalar",
     title: "rûyalar",
     srchigh: ["/static/art/ruyalar/1.mp4", "/static/art/ruyalar/2.png"],
-    srclow: ["/static/art/ruyalar/1-1.mp4", "/static/art/ruyalar/2-1.jpeg"],
+    srclow: ["/static/art/ruyalar/1-is.mp4", "/static/art/ruyalar/2-1.jpeg"],
     location: `Unknown, Turkey`,
     customcss: {
       toimg: "drop-shadow-md drop-shadow-black/5"
