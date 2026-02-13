@@ -157,7 +157,35 @@
 				class="flex gap-6 pr-[10vw] pl-[6vw] will-change-transform md:pl-[18vw]"
 				style="transform: translateX(-{scrollX}px)"
 			>
-				{#if images[0].endsWith('.mp4')}
+				{#if images[0].endsWith('.mp4') && images[1].endsWith('.mp4')}
+					{#each images as src, i (src)}
+						<figure class="flex flex-col gap-4">
+							<video
+								{src}
+								class="h-[300px] w-auto max-w-none object-contain md:h-[450px]"
+								autoplay
+								loop
+								muted
+								playsinline
+								on:mouseenter={(e) => e.currentTarget.pause()}
+								on:mouseleave={(e) => e.currentTarget.play()}
+								on:touchstart={(e) => e.currentTarget.pause()}
+								on:touchend={(e) => e.currentTarget.play()}
+							></video>
+							<div>
+								<!-- svelte-ignore a11y_figcaption_parent -->
+								<figcaption class="text-sm tracking-wider text-neutral-400">
+									{photo.title} - image {i + 1} of {images.length}
+								</figcaption>
+								{#if photo.location && i === 0}
+									<figcaption class="text-xs tracking-wider text-neutral-400 italic">
+										{photo.location}
+									</figcaption>
+								{/if}
+							</div>
+						</figure>
+					{/each}
+				{:else if images[0].endsWith('.mp4')}
 					<figure class="flex flex-col gap-4">
 						<video
 							src={images[0]}
@@ -184,20 +212,20 @@
 					</figure>
 					{#each images as src, i (src)}
 						{#if i === 0}{:else}
-							<figure class="flex flex-col gap-4">
-								<img {src} class="h-[300px] w-auto max-w-none object-contain md:h-[450px]" />
-								<div>
-									<!-- svelte-ignore a11y_figcaption_parent -->
-									<figcaption class="text-sm tracking-wider text-neutral-400">
-										{photo.title} - image {i + 1} of {images.length}
+						<figure class="flex flex-col gap-4">
+							<img {src} class="h-[300px] w-auto max-w-none object-contain md:h-[450px]" />
+							<div>
+								<!-- svelte-ignore a11y_figcaption_parent -->
+								<figcaption class="text-sm tracking-wider text-neutral-400">
+									{photo.title} - image {i + 1} of {images.length}
+								</figcaption>
+								{#if photo.location && i === 0}
+									<figcaption class="text-xs tracking-wider text-neutral-400 italic">
+										{photo.location}
 									</figcaption>
-									{#if photo.location && i === 0}
-										<figcaption class="text-xs tracking-wider text-neutral-400 italic">
-											{photo.location}
-										</figcaption>
-									{/if}
-								</div>
-							</figure>
+								{/if}
+							</div>
+						</figure>
 						{/if}
 					{/each}
 				{:else}

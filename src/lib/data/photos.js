@@ -1,11 +1,17 @@
 export const photos = [
   {
+    slug: "strobe",
+    title: "strobe",
+    srchigh: ["/static/art/strobe/1.mp4", "/static/art/strobe/2.mp4", "/static/art/strobe/3.mp4", "/static/art/strobe/4.mp4"],
+    srclow: ["/static/art/strobe/1.mp4", "/static/art/strobe/2.mp4", "/static/art/strobe/3.mp4", "/static/art/strobe/4.mp4"],
+    location: "Hamburg, Germany"
+  },
+  {
     slug: "untitled-01",
     title: "untitled 01",
     srchigh: ["/static/art/untitled-01/1.png", "/static/art/untitled-01/2.png"],
     srclow: ["/static/art/untitled-01/1-1.jpeg", "/static/art/untitled-01/2-1.jpeg"],
     location: "Unknown, Turkey"
-
   },
   {
     slug: "between-silence-and-distance",
@@ -42,14 +48,21 @@ export const photos = [
     srclow: ["/static/art/still-drunk/1-1.jpeg"],
     location: `Izmir, Turkey - 38°26'13.1"N 27°09'29.0"E`
   },
+    {
+    slug: "khontkar-11-02-26",
+    title: "khontkar concert - 11-02-26",
+    srchigh: ["/static/art/khontkar-11-02-26/1.png","/static/art/khontkar-11-02-26/2.png","/static/art/khontkar-11-02-26/3.png","/static/art/khontkar-11-02-26/4.png","/static/art/khontkar-11-02-26/5.png"],
+    srclow: ["/static/art/khontkar-11-02-26/1-1.jpeg","/static/art/khontkar-11-02-26/2-1.jpeg","/static/art/khontkar-11-02-26/3-1.jpeg","/static/art/khontkar-11-02-26/4-1.jpeg","/static/art/khontkar-11-02-26/5-1.jpeg"],
+    location: `Cliff Venue Izmir, Turkey - 38°27'48.9"N 27°13'05.5"E`
+  },
   {
     slug: "no-land-07-12-25",
     title: "no land concert - 07-12-25",
-    srchigh: ["/static/art/no-land-07-12-25/1.png", "/static/art/no-land-07-12-25/2.png", "/static/art/no-land-07-12-25/3.png",  "/static/art/no-land-07-12-25/4.png"],
+    srchigh: ["/static/art/no-land-07-12-25/1.png", "/static/art/no-land-07-12-25/2.png", "/static/art/no-land-07-12-25/3.png", "/static/art/no-land-07-12-25/4.png"],
     srclow: ["/static/art/no-land-07-12-25/1-1.jpeg", "/static/art/no-land-07-12-25/2-1.jpeg", "/static/art/no-land-07-12-25/3-1.jpeg", "/static/art/no-land-07-12-25/4-1.jpeg"],
     location: `Soldout Izmir, Turkey - 38°28'29.6"N 27°04'26.9"E`
   },
-    {
+  {
     slug: "aisu-21-11-05",
     title: "aisu concert - 21-11-25",
     srchigh: ["/static/art/aisu-21-11-05/1.png", "/static/art/aisu-21-11-05/2.png", "/static/art/aisu-21-11-05/3.png", "/static/art/aisu-21-11-05/4.png", "/static/art/aisu-21-11-05/5.png"],
@@ -78,7 +91,7 @@ export const photos = [
     srclow: ["/static/art/baris/1-1.jpeg"],
     location: `Kuşadası, Turkey - 37°52'01.9"N 27°15'49.7"E`
   },
-      {
+  {
     slug: "ruyalar",
     title: "rûyalar",
     srchigh: ["/static/art/ruyalar/1.mp4", "/static/art/ruyalar/2.png"],
