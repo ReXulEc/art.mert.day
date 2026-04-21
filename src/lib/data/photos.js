@@ -3,7 +3,7 @@ export const photos = [
     slug: "strobe",
     title: "strobe",
     srchigh: ["/static/art/strobe/1.mp4", "/static/art/strobe/2.mp4", "/static/art/strobe/3.mp4", "/static/art/strobe/4.mp4"],
-    srclow: ["/static/art/strobe/1.mp4", "/static/art/strobe/2.mp4", "/static/art/strobe/3.mp4", "/static/art/strobe/4.mp4"],
+    srclow: ["/static/art/strobe/1-1.mp4", "/static/art/strobe/2-1.mp4", "/static/art/strobe/3-1.mp4", "/static/art/strobe/4-1.mp4"],
     location: "Hamburg, Germany"
   },
   {
