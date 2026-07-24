@@ -7,7 +7,7 @@
 		<div class="relative h-[24px] overflow-hidden flex justify-center">
 			<!-- Scroll text -->
 			<p class="scroll-text hideafterthreeseconds text-[10px] text-neutral-500">
-				Scroll bottom to see more →
+				Scroll right to see more →
 			</p>
 
 			<div class="icons showafterthreeseconds flex gap-6">
